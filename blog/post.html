@@ -24,14 +24,30 @@
     const root = document.getElementById('post');
 
     if (!post) {
-      root.innerHTML = '<h2>未找到文章</h2><p>请返回列表选择文章。</p>';
+      const h2 = document.createElement('h2');
+      h2.textContent = '未找到文章';
+      const p = document.createElement('p');
+      p.textContent = '请返回列表选择文章。';
+      root.replaceChildren(h2, p);
     } else {
       const fmt = (d) => new Date(d).toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' });
-      root.innerHTML = `
-        <h2>${post.title}</h2>
-        <p class="meta">${fmt(post.date)} · ${post.author}</p>
-        <div class="content">${post.content.map((x)=>`<p>${x}</p>`).join('')}</div>
-      `;
+
+      const h2 = document.createElement('h2');
+      h2.textContent = post.title || '';
+
+      const meta = document.createElement('p');
+      meta.className = 'meta';
+      meta.textContent = `${fmt(post.date)} · ${post.author || ''}`;
+
+      const content = document.createElement('div');
+      content.className = 'content';
+      (post.content || []).forEach((line) => {
+        const para = document.createElement('p');
+        para.textContent = line || '';
+        content.appendChild(para);
+      });
+
+      root.replaceChildren(h2, meta, content);
     }
   </script>
 </body>

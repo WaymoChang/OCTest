@@ -28,12 +28,27 @@
     posts.forEach((p) => {
       const card = document.createElement('article');
       card.className = 'card';
-      card.innerHTML = `
-        <h2>${p.title}</h2>
-        <p class="meta">${fmt(p.date)} · ${p.author}</p>
-        <p class="excerpt">${p.excerpt}</p>
-        <a class="btn" href="./post.html?slug=${encodeURIComponent(p.slug)}">阅读详情</a>
-      `;
+
+      const h2 = document.createElement('h2');
+      h2.textContent = p.title || '';
+
+      const meta = document.createElement('p');
+      meta.className = 'meta';
+      meta.textContent = `${fmt(p.date)} · ${p.author || ''}`;
+
+      const excerpt = document.createElement('p');
+      excerpt.className = 'excerpt';
+      excerpt.textContent = p.excerpt || '';
+
+      const a = document.createElement('a');
+      a.className = 'btn';
+      a.href = `./post.html?slug=${encodeURIComponent(p.slug || '')}`;
+      a.textContent = '阅读详情';
+
+      card.appendChild(h2);
+      card.appendChild(meta);
+      card.appendChild(excerpt);
+      card.appendChild(a);
       list.appendChild(card);
     });
   </script>
