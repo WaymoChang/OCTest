@@ -44,9 +44,26 @@
 
       const lines = post.content || [];
 
-      // Optional highlight box from first meaningful paragraph
-      const firstMeaningful = lines.find((x) => (x || '').trim() && !/^\s*[一二三四五六七八九十]+、/.test((x || '').trim()));
-      if (firstMeaningful) {
+      // Smarter summary: prefer excerpt, fallback to first substantial body paragraph
+      const summaryText = (() => {
+        const ex = (post.excerpt || '').trim();
+        if (ex) return ex;
+
+        const candidates = lines
+          .map((x) => (x || '').trim())
+          .filter(Boolean)
+          .filter((t) => !/^[一二三四五六七八九十]+、/.test(t))
+          .filter((t) => !/^【.*】/.test(t))
+          .filter((t) => !/^原文链接[:：]/.test(t))
+          .filter((t) => !/^版权说明[:：]/.test(t))
+          .filter((t) => !/^结语/.test(t))
+          .filter((t) => !/^[-•]\s+/.test(t))
+          .filter((t) => t.length >= 24);
+
+        return candidates[0] || '';
+      })();
+
+      if (summaryText) {
         const summary = document.createElement('div');
         summary.className = 'summary-box';
 
@@ -55,7 +72,7 @@
         st.textContent = '核心摘要';
 
         const sp = document.createElement('p');
-        sp.textContent = firstMeaningful;
+        sp.textContent = summaryText;
 
         summary.appendChild(st);
         summary.appendChild(sp);
