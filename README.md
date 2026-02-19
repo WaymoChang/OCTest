@@ -171,3 +171,11 @@ cd react-app
 npm install
 npm run test
 ```
+
+
+### Analytics Pro（Plausible）
+
+1. 打开 `assets/analytics-config.js`
+2. 设置：`provider: "plausible"`、`enabled: true`
+3. 填好 `plausible.domain`（建议你的站点主域）
+4. 提交后即可在不改页面代码的情况下启用跨设备统计
