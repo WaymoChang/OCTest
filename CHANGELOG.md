@@ -9,7 +9,10 @@ and this project loosely follows [Semantic Versioning](https://semver.org/spec/v
 
 ### Added
 
-- Placeholder for upcoming changes.
+- Batch-added 2 AgeTech Chinese deep-dive posts (copyright-compliant original commentary with source attribution):
+  - `vcu-hah-rpm-governance-cn-analysis-20260219`
+  - `aarp-older-adults-tech-adoption-2026-cn-analysis`
+  - File: `blog/assets/posts.js`
 
 ## [0.3.0] - 2026-02-19
 
