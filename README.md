@@ -105,3 +105,10 @@ python3 -m http.server 8080
 
 - Blog 列表: https://waymochang.github.io/OCTest/blog/
 - Blog 详情示例: https://waymochang.github.io/OCTest/blog/post.html?slug=hello-octest-blog
+
+
+## Multi Pages
+
+- About: https://waymochang.github.io/OCTest/pages/about.html
+- Changelog: https://waymochang.github.io/OCTest/pages/changelog.html
+- Contact: https://waymochang.github.io/OCTest/pages/contact.html
