@@ -40,8 +40,8 @@ body {
   gap: 16px;
 }
 .card, .post {
-  background: rgba(17,26,46,.92);
-  border: 1px solid rgba(255,255,255,.1);
+  background: var(--card);
+  border: 1px solid color-mix(in srgb, var(--text) 16%, transparent);
   border-radius: 14px;
   padding: 18px;
 }
@@ -174,4 +174,16 @@ body {
 
 :root[data-theme="light"] .summary-title {
   color: #0e6f84;
+}
+
+
+:root[data-theme="light"] .card,
+:root[data-theme="light"] .post {
+  background: #ffffff;
+  border-color: rgba(10, 23, 53, 0.14);
+  box-shadow: 0 8px 24px rgba(13, 38, 76, 0.08);
+}
+
+:root[data-theme="light"] .btn {
+  color: #072432;
 }
