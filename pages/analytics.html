@@ -20,12 +20,14 @@
     <section class="card">
       <span class="badge">Local analytics</span>
       <h1>访问统计（本地）</h1>
-      <p class="small">说明：当前是浏览器本地埋点（localStorage），用于快速验证访问趋势。不同设备不自动汇总。</p>
+      <p class="small">说明：默认是浏览器本地埋点（localStorage）。你也可以在 assets/analytics-config.js 开启 Plausible，实现跨设备统计（Analytics Pro）。</p>
       <div id="stats"></div>
+      <div id="pro-status" class="small"></div>
       <button id="clear" class="link-btn" type="button">清空本地统计</button>
     </section>
   </main>
   <script src="../assets/theme.js"></script>
+  <script src="../assets/analytics-config.js"></script>
   <script src="../assets/analytics.js"></script>
   <script>
     const KEY = 'octest.analytics.v1';
@@ -47,8 +49,18 @@
     }
     document.getElementById('clear').addEventListener('click', () => {
       localStorage.removeItem(KEY);
-      render();
+      
+    const cfg = window.OCTEST_ANALYTICS_CONFIG || {};
+    const pro = document.getElementById('pro-status');
+    const mode = cfg.enabled && cfg.provider === 'plausible' ? `Plausible 已启用（domain: ${(cfg.plausible||{}).domain || '-'})` : 'Plausible 未启用（当前 local-only）';
+    pro.textContent = `Analytics Pro 状态：${mode}`;
+    render();
     });
+    
+    const cfg = window.OCTEST_ANALYTICS_CONFIG || {};
+    const pro = document.getElementById('pro-status');
+    const mode = cfg.enabled && cfg.provider === 'plausible' ? `Plausible 已启用（domain: ${(cfg.plausible||{}).domain || '-'})` : 'Plausible 未启用（当前 local-only）';
+    pro.textContent = `Analytics Pro 状态：${mode}`;
     render();
   </script>
 </body>
