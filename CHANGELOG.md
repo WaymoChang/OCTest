@@ -1,44 +1,60 @@
 # Changelog
 
-All notable changes to this project are documented in this file.
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project loosely follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-- (reserved)
+### Added
 
-## [2026-02-19]
+- Placeholder for upcoming changes.
+
+## [0.3.0] - 2026-02-19
 
 ### Added
 
-- **Initial landing page** (`index.html`) with futuristic neon style, animated background effects, responsive layout, and CTA buttons.
-  - Commit: `e333aa0`
-  - Message: `Add futuristic static welcome page`
-
-- **Project README** (`README.md`) with basic project intro, live demo link, structure, local preview, and deployment notes.
-  - Commit: `7419e88`
-  - Message: `Add project README`
-
-- **Expanded project narrative in README**: detailed creation workflow (AI + CLI automation), technical stack, assistant profile, creator profile, and roadmap ideas.
-  - Commit: `fa66a65`
-  - Message: `Enhance README with detailed project story and profiles`
-
-- **Blog module structure**:
-  - `blog/index.html` (blog list page)
-  - `blog/post.html` (blog detail page by `slug`)
-  - `blog/assets/posts.js` (content source)
-  - `blog/assets/blog.css` (styles)
-  - Home page entry link to Blog
-  - README links for blog access
-  - Commit: `d377d61`
-  - Message: `Add blog list/detail page structure and publish links`
-
-- **Third blog post (copyright-compliant Chinese deep-dive)** based on a public source article (analysis/synthesis, non-literal translation) with source link included.
-  - File updated: `blog/assets/posts.js`
+- Third blog post: a copyright-compliant Chinese deep-dive analysis based on an external article (non-literal translation), with source citation link included.
+  - File: `blog/assets/posts.js`
   - Commit: `6c4c114`
-  - Message: `Add compliant Chinese deep-dive blog post based on HHCN article`
+
+## [0.2.0] - 2026-02-19
+
+### Added
+
+- Blog module structure:
+  - `blog/index.html` (blog list page)
+  - `blog/post.html` (blog detail page rendered by `slug`)
+  - `blog/assets/posts.js` (post data source)
+  - `blog/assets/blog.css` (blog styles)
+- Root landing page entry link to Blog.
+- README links for direct blog access.
+  - Commit: `d377d61`
+
+## [0.1.1] - 2026-02-19
 
 ### Changed
 
-- Commit author identity was normalized to GitHub noreply identity for consistency across repository history.
-  - Resulting visible commits now use `WaymoChang <183978318+WaymoChang@users.noreply.github.com>`.
+- Expanded `README.md` with detailed project story, toolchain/workflow, AI assistant profile, creator profile, and roadmap ideas.
+  - Commit: `fa66a65`
 
+## [0.1.0] - 2026-02-19
+
+### Added
+
+- Initial futuristic static welcome page (`index.html`) with neon style, animated background effects, and responsive layout.
+  - Commit: `e333aa0`
+- Initial `README.md` with project intro, demo link, structure, local preview, and deployment notes.
+  - Commit: `7419e88`
+
+### Changed
+
+- Commit author identity normalized in repository history to GitHub noreply identity for consistency:
+  - `WaymoChang <183978318+WaymoChang@users.noreply.github.com>`
+
+[unreleased]: https://github.com/WaymoChang/OCTest/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/WaymoChang/OCTest/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/WaymoChang/OCTest/compare/v0.1.1...v0.2.0
+[0.1.1]: https://github.com/WaymoChang/OCTest/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/WaymoChang/OCTest/releases/tag/v0.1.0
