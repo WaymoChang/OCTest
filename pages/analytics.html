@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics · OCTest</title>
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html">Home</a>
+    <a href="../blog/index.html">Blog</a>
+    <a href="./about.html">About</a>
+    <a href="./changelog.html">Changelog</a>
+    <a href="./contact.html">Contact</a>
+    <a class="active" href="./analytics.html">Analytics</a>
+    <button id="theme-toggle" class="theme-toggle" type="button">☀️ Light</button>
+  </nav>
+  <main class="wrap">
+    <section class="card">
+      <span class="badge">Local analytics</span>
+      <h1>访问统计（本地）</h1>
+      <p class="small">说明：当前是浏览器本地埋点（localStorage），用于快速验证访问趋势。不同设备不自动汇总。</p>
+      <div id="stats"></div>
+      <button id="clear" class="link-btn" type="button">清空本地统计</button>
+    </section>
+  </main>
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/analytics.js"></script>
+  <script>
+    const KEY = 'octest.analytics.v1';
+    function read() {
+      try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; }
+    }
+    function render() {
+      const s = read();
+      const root = document.getElementById('stats');
+      const pvs = s.pageviews || {};
+      const rows = Object.entries(pvs).sort((a,b)=>b[1]-a[1]);
+      const total = rows.reduce((n, [,v]) => n+v, 0);
+      root.innerHTML = `
+        <p><strong>Total pageviews:</strong> ${total}</p>
+        <p><strong>Last updated:</strong> ${s.updatedAt || '-'}</p>
+        <h3>By path</h3>
+        <ul>${rows.map(([k,v])=>`<li><code>${k}</code> — ${v}</li>`).join('') || '<li>暂无数据</li>'}</ul>
+      `;
+    }
+    document.getElementById('clear').addEventListener('click', () => {
+      localStorage.removeItem(KEY);
+      render();
+    });
+    render();
+  </script>
+</body>
+</html>
