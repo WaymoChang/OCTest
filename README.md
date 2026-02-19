@@ -89,6 +89,30 @@ python3 -m http.server 8080
 
 ## 🗺️ 下一步可扩展
 
+- 内容管理后台（轻量 CMS）
+  - 把 posts.js 改成 JSON/Markdown + 简单编辑页
+  - 以后发文章不需要手改代码
+- 自动发布流水线（内容→PR）
+  - cron 产出的文章先走自动 PR，不直接写主分支
+  - 仅在 CI 通过后合并，质量更稳
+- 站内搜索 + 标签系统
+  - Blog 按主题（AgeTech / X 科技 / 新加坡政策）筛选
+  - 提升历史内容检索效率
+- 文章模板标准化
+  - 固定模板：核心结论 / 影响 / 原文链接 / 风险提示
+  - 保证每篇可读性一致
+- 可观测性升级（Analytics Pro）
+  - 从 localStorage 升级到 Cloudflare Analytics 或 Plausible
+  - 查看真实访客来源与热门内容
+- SEO 基础优化
+  - sitemap、meta、Open Graph、结构化数据
+  - 提升搜索收录与分享预览质量
+- 多语言支持（中英双语）
+  - 支持同篇文章 CN/EN 切换
+  - 面向更广读者群
+- 安全再加固
+  - CSP、安全 headers、依赖审计（npm audit + Dependabot）
+  - 与 CI 质量门禁形成闭环
 
 ---
 
