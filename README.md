@@ -118,8 +118,11 @@ python3 -m http.server 8080
 ## CI
 
 - GitHub Actions workflow: `.github/workflows/lint.yml`
-- 自动检查：HTMLHint（HTML）+ Stylelint（CSS）
-- 触发：push 到 `main` 和 pull request
+- 质量门禁包含：
+  - HTMLHint（HTML）
+  - Stylelint（CSS）
+  - React Unit Tests（Vitest）
+- 触发：每次 `push main` 与 `pull request`
 
 
 ## React App (Engineering Migration)
