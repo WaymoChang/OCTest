@@ -1,4 +1,4 @@
-const posts = [
+window.posts = [
       {
     slug: 'home-care-ma-2026-cn-analysis',
     title: '2026 居家照护并购趋势：一篇合规中文深度解读',
