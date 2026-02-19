@@ -89,8 +89,6 @@ python3 -m http.server 8080
 
 ## 🗺️ 下一步可扩展
 
-- 增加多页面（About / Changelog / Contact）
-- 接入深色/浅色主题切换
 - 接入简单埋点（访问统计）
 - 改造为 React/Vite 或 Next.js 工程化项目
 - 增加 CI 自动检查（HTML/CSS Lint）

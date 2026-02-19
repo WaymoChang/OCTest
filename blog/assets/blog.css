@@ -1,9 +1,16 @@
-:root {
+:root[data-theme="dark"] {
   --bg: #0b1220;
   --card: #111a2e;
   --text: #e8f0ff;
   --muted: #9eb2d1;
   --accent: #67e8f9;
+}
+:root[data-theme="light"] {
+  --bg: #f4f8ff;
+  --card: #ffffff;
+  --text: #13213d;
+  --muted: #566688;
+  --accent: #0ea5b7;
 }
 * { box-sizing: border-box; }
 body {
@@ -119,3 +126,16 @@ body {
 }
 
 .line-gap { height: 8px; }
+
+
+.theme-toggle {
+  margin-left: auto;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
