@@ -89,7 +89,6 @@ python3 -m http.server 8080
 
 ## 🗺️ 下一步可扩展
 
-- 改造为 React/Vite 或 Next.js 工程化项目
 
 ---
 
@@ -121,3 +120,16 @@ python3 -m http.server 8080
 - GitHub Actions workflow: `.github/workflows/lint.yml`
 - 自动检查：HTMLHint（HTML）+ Stylelint（CSS）
 - 触发：push 到 `main` 和 pull request
+
+
+## React App (Engineering Migration)
+
+- Path: `react-app/`
+- Stack: React + Vite + React Router
+- Run locally:
+  ```bash
+  cd react-app
+  npm install
+  npm run dev
+  ```
+- Current status: Phase 1 scaffold completed (multi-page routing + blog route placeholders).
