@@ -133,3 +133,14 @@ python3 -m http.server 8080
   npm run dev
   ```
 - Current status: Phase 1 scaffold completed (multi-page routing + blog route placeholders).
+
+
+## Testing
+
+React app unit tests (Vitest + Testing Library):
+
+```bash
+cd react-app
+npm install
+npm run test
+```
