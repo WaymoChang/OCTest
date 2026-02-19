@@ -99,3 +99,9 @@ python3 -m http.server 8080
 
 > 这个仓库本身也是一个示范：
 > **AI 不只是回答问题，也可以和人一起把事情真正做完。**
+
+
+## Blog Pages
+
+- Blog 列表: https://waymochang.github.io/OCTest/blog/
+- Blog 详情示例: https://waymochang.github.io/OCTest/blog/post.html?slug=hello-octest-blog

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OCTest Blog</title>
+  <link rel="stylesheet" href="./assets/blog.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">← OCTest</a>
+    <h1>Blog 列表</h1>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p>这里是博客结构页（占位版）。你后续给我真实内容后，我会直接填进去。</p>
+    </section>
+
+    <section id="post-list" class="grid"></section>
+  </main>
+
+  <script src="./assets/posts.js"></script>
+  <script>
+    const list = document.getElementById('post-list');
+    const fmt = (d) => new Date(d).toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' });
+
+    posts.forEach((p) => {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `
+        <h2>${p.title}</h2>
+        <p class="meta">${fmt(p.date)} · ${p.author}</p>
+        <p class="excerpt">${p.excerpt}</p>
+        <a class="btn" href="./post.html?slug=${encodeURIComponent(p.slug)}">阅读详情</a>
+      `;
+      list.appendChild(card);
+    });
+  </script>
+</body>
+</html>
