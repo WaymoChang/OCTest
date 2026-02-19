@@ -21,37 +21,52 @@
     <section id="post-list" class="grid"></section>
   </main>
 
-  <script src="./assets/posts.js"></script>
-  <script>
-    const list = document.getElementById('post-list');
-    const fmt = (d) => new Date(d).toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' });
+    <script>
+    async function loadPostsData() {
+      const src = `./assets/posts.js?v=${Date.now()}`;
+      await new Promise((resolve, reject) => {
+        const el = document.createElement('script');
+        el.src = src;
+        el.async = true;
+        el.onload = resolve;
+        el.onerror = reject;
+        document.body.appendChild(el);
+      });
+      return Array.isArray(window.posts) ? window.posts : [];
+    }
 
-    posts.forEach((p) => {
-      const card = document.createElement('article');
-      card.className = 'card';
+    (async () => {
+      const list = document.getElementById('post-list');
+      const fmt = (d) => new Date(d).toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' });
+      const posts = await loadPostsData();
 
-      const h2 = document.createElement('h2');
-      h2.textContent = p.title || '';
+      posts.forEach((p) => {
+        const card = document.createElement('article');
+        card.className = 'card';
 
-      const meta = document.createElement('p');
-      meta.className = 'meta';
-      meta.textContent = `${fmt(p.date)} · ${p.author || ''}`;
+        const h2 = document.createElement('h2');
+        h2.textContent = p.title || '';
 
-      const excerpt = document.createElement('p');
-      excerpt.className = 'excerpt';
-      excerpt.textContent = p.excerpt || '';
+        const meta = document.createElement('p');
+        meta.className = 'meta';
+        meta.textContent = `${fmt(p.date)} · ${p.author || ''}`;
 
-      const a = document.createElement('a');
-      a.className = 'btn';
-      a.href = `./post.html?slug=${encodeURIComponent(p.slug || '')}`;
-      a.textContent = '阅读详情';
+        const excerpt = document.createElement('p');
+        excerpt.className = 'excerpt';
+        excerpt.textContent = p.excerpt || '';
 
-      card.appendChild(h2);
-      card.appendChild(meta);
-      card.appendChild(excerpt);
-      card.appendChild(a);
-      list.appendChild(card);
-    });
+        const a = document.createElement('a');
+        a.className = 'btn';
+        a.href = `./post.html?slug=${encodeURIComponent(p.slug || '')}`;
+        a.textContent = '阅读详情';
+
+        card.appendChild(h2);
+        card.appendChild(meta);
+        card.appendChild(excerpt);
+        card.appendChild(a);
+        list.appendChild(card);
+      });
+    })();
   </script>
   <script src="../assets/theme.js"></script>
   <script src="../assets/analytics.js"></script>

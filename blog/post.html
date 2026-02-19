@@ -17,114 +17,125 @@
     <article id="post" class="post"></article>
   </main>
 
-  <script src="./assets/posts.js"></script>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get('slug');
-    const post = posts.find((p) => p.slug === slug);
-    const root = document.getElementById('post');
-
-    if (!post) {
-      const h2 = document.createElement('h2');
-      h2.textContent = '未找到文章';
-      const p = document.createElement('p');
-      p.textContent = '请返回列表选择文章。';
-      root.replaceChildren(h2, p);
-    } else {
-      const fmt = (d) => new Date(d).toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' });
-
-      const h2 = document.createElement('h2');
-      h2.textContent = post.title || '';
-
-      const meta = document.createElement('p');
-      meta.className = 'meta';
-      meta.textContent = `${fmt(post.date)} · ${post.author || ''}`;
-
-      const content = document.createElement('div');
-      content.className = 'content';
-
-      const lines = post.content || [];
-
-      // Smarter summary: prefer excerpt, fallback to first substantial body paragraph
-      const summaryText = (() => {
-        const ex = (post.excerpt || '').trim();
-        if (ex) return ex;
-
-        const candidates = lines
-          .map((x) => (x || '').trim())
-          .filter(Boolean)
-          .filter((t) => !/^[一二三四五六七八九十]+、/.test(t))
-          .filter((t) => !/^【.*】/.test(t))
-          .filter((t) => !/^原文链接[:：]/.test(t))
-          .filter((t) => !/^版权说明[:：]/.test(t))
-          .filter((t) => !/^结语/.test(t))
-          .filter((t) => !/^[-•]\s+/.test(t))
-          .filter((t) => t.length >= 24);
-
-        return candidates[0] || '';
-      })();
-
-      if (summaryText) {
-        const summary = document.createElement('div');
-        summary.className = 'summary-box';
-
-        const st = document.createElement('div');
-        st.className = 'summary-title';
-        st.textContent = '核心摘要';
-
-        const sp = document.createElement('p');
-        sp.textContent = summaryText;
-
-        summary.appendChild(st);
-        summary.appendChild(sp);
-        content.appendChild(summary);
-      }
-
-      (lines).forEach((line) => {
-        const text = (line || '').trim();
-
-        if (!text) {
-          const gap = document.createElement('div');
-          gap.className = 'line-gap';
-          content.appendChild(gap);
-          return;
-        }
-
-        // Section title: 一、二、三…
-        if (/^[一二三四五六七八九十]+、/.test(text)) {
-          const h3 = document.createElement('h3');
-          h3.className = 'section-title';
-          h3.textContent = text;
-          content.appendChild(h3);
-          return;
-        }
-
-        // Inline list item
-        if (/^[-•]\s+/.test(text)) {
-          const li = document.createElement('p');
-          li.className = 'bullet-line';
-          li.textContent = text.replace(/^[-•]\s+/, '');
-          content.appendChild(li);
-          return;
-        }
-
-        // Callout style lines
-        if (/^【.*】/.test(text) || /^原文链接[:：]/.test(text) || /^版权说明[:：]/.test(text) || /^结语/.test(text)) {
-          const callout = document.createElement('p');
-          callout.className = 'callout-line';
-          callout.textContent = text;
-          content.appendChild(callout);
-          return;
-        }
-
-        const para = document.createElement('p');
-        para.className = 'body-line';
-        para.textContent = text;
-        content.appendChild(para);
+    <script>
+    async function loadPostsData() {
+      const src = `./assets/posts.js?v=${Date.now()}`;
+      await new Promise((resolve, reject) => {
+        const el = document.createElement('script');
+        el.src = src;
+        el.async = true;
+        el.onload = resolve;
+        el.onerror = reject;
+        document.body.appendChild(el);
       });
-
-      root.replaceChildren(h2, meta, content);
+      return Array.isArray(window.posts) ? window.posts : [];
     }
+
+    (async () => {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug');
+      const posts = await loadPostsData();
+      const post = posts.find((p) => p.slug === slug);
+      const root = document.getElementById('post');
+
+      if (!post) {
+        const h2 = document.createElement('h2');
+        h2.textContent = '未找到文章';
+        const p = document.createElement('p');
+        p.textContent = '请返回列表选择文章。';
+        root.replaceChildren(h2, p);
+      } else {
+        const fmt = (d) => new Date(d).toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' });
+
+        const h2 = document.createElement('h2');
+        h2.textContent = post.title || '';
+
+        const meta = document.createElement('p');
+        meta.className = 'meta';
+        meta.textContent = `${fmt(post.date)} · ${post.author || ''}`;
+
+        const content = document.createElement('div');
+        content.className = 'content';
+
+        const lines = post.content || [];
+
+        const summaryText = (() => {
+          const ex = (post.excerpt || '').trim();
+          if (ex) return ex;
+
+          const candidates = lines
+            .map((x) => (x || '').trim())
+            .filter(Boolean)
+            .filter((t) => !/^[一二三四五六七八九十]+、/.test(t))
+            .filter((t) => !/^【.*】/.test(t))
+            .filter((t) => !/^原文链接[:：]/.test(t))
+            .filter((t) => !/^版权说明[:：]/.test(t))
+            .filter((t) => !/^结语/.test(t))
+            .filter((t) => !/^[-•]\s+/.test(t))
+            .filter((t) => t.length >= 24);
+
+          return candidates[0] || '';
+        })();
+
+        if (summaryText) {
+          const summary = document.createElement('div');
+          summary.className = 'summary-box';
+
+          const st = document.createElement('div');
+          st.className = 'summary-title';
+          st.textContent = '核心摘要';
+
+          const sp = document.createElement('p');
+          sp.textContent = summaryText;
+
+          summary.appendChild(st);
+          summary.appendChild(sp);
+          content.appendChild(summary);
+        }
+
+        (lines).forEach((line) => {
+          const text = (line || '').trim();
+
+          if (!text) {
+            const gap = document.createElement('div');
+            gap.className = 'line-gap';
+            content.appendChild(gap);
+            return;
+          }
+
+          if (/^[一二三四五六七八九十]+、/.test(text)) {
+            const h3 = document.createElement('h3');
+            h3.className = 'section-title';
+            h3.textContent = text;
+            content.appendChild(h3);
+            return;
+          }
+
+          if (/^[-•]\s+/.test(text)) {
+            const li = document.createElement('p');
+            li.className = 'bullet-line';
+            li.textContent = text.replace(/^[-•]\s+/, '');
+            content.appendChild(li);
+            return;
+          }
+
+          if (/^【.*】/.test(text) || /^原文链接[:：]/.test(text) || /^版权说明[:：]/.test(text) || /^结语/.test(text)) {
+            const callout = document.createElement('p');
+            callout.className = 'callout-line';
+            callout.textContent = text;
+            content.appendChild(callout);
+            return;
+          }
+
+          const para = document.createElement('p');
+          para.className = 'body-line';
+          para.textContent = text;
+          content.appendChild(para);
+        });
+
+        root.replaceChildren(h2, meta, content);
+      }
+    })();
   </script>
   <script src="../assets/theme.js"></script>
   <script src="../assets/analytics.js"></script>
