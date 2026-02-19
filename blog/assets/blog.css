@@ -8,8 +8,8 @@
 :root[data-theme="light"] {
   --bg: #f4f8ff;
   --card: #ffffff;
-  --text: #13213d;
-  --muted: #566688;
+  --text: #0b1630;
+  --muted: #3f5275;
   --accent: #0ea5b7;
 }
 * { box-sizing: border-box; }
@@ -139,3 +139,39 @@ body {
   font-weight: 600;
 }
 .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+
+:root[data-theme="light"] .card h2,
+:root[data-theme="light"] .post h2 {
+  color: #0a1735;
+}
+
+:root[data-theme="light"] .meta {
+  color: #42577c;
+}
+
+:root[data-theme="light"] .excerpt,
+:root[data-theme="light"] .body-line,
+:root[data-theme="light"] .content p {
+  color: #10213f;
+}
+
+:root[data-theme="light"] .section-title {
+  color: #0f4f7a;
+  border-left-color: #0ea5b7;
+}
+
+:root[data-theme="light"] .callout-line {
+  color: #10213f;
+  background: rgba(14, 165, 183, 0.08);
+  border-color: rgba(14, 165, 183, 0.25);
+}
+
+:root[data-theme="light"] .summary-box {
+  background: linear-gradient(180deg, rgba(14,165,183,.14), rgba(14,165,183,.06));
+  border-color: rgba(14,165,183,.35);
+}
+
+:root[data-theme="light"] .summary-title {
+  color: #0e6f84;
+}
