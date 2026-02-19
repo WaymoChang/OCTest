@@ -90,7 +90,6 @@ python3 -m http.server 8080
 ## 🗺️ 下一步可扩展
 
 - 改造为 React/Vite 或 Next.js 工程化项目
-- 增加 CI 自动检查（HTML/CSS Lint）
 
 ---
 
@@ -115,3 +114,10 @@ python3 -m http.server 8080
 
 - Local analytics dashboard: https://waymochang.github.io/OCTest/pages/analytics.html
 - Tracking includes pageviews + basic click events (stored in browser localStorage).
+
+
+## CI
+
+- GitHub Actions workflow: `.github/workflows/lint.yml`
+- 自动检查：HTMLHint（HTML）+ Stylelint（CSS）
+- 触发：push 到 `main` 和 pull request
