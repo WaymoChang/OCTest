@@ -163,5 +163,147 @@ const posts = [
       '结语',
       'OpenAI 相关新闻的价值，不只在“发生了什么”，更在“它对模型、算力和企业软件三条曲线产生了什么耦合影响”。这才是前沿科技决策的关键视角。'
     ]
+  },
+  {
+    slug: 'sg-moh-community-care-salary-guidelines-20260217-cn',
+    title: '新加坡社区照护薪酬新政解读：老龄照护“人力瓶颈”如何被系统性缓解',
+    date: '2026-02-19',
+    author: 'WaymoChang',
+    excerpt: '基于 MOH 2026-02-17 官方讲话的原创解读：约2.3万名社区照护人员薪酬上调背后的政策逻辑与落地观察点。',
+    content: [
+      '【版权说明】本文为原创中文深度解读，不是原文逐字翻译。原始内容版权归新加坡卫生部（MOH）所有。',
+      '原文链接： https://www.moh.gov.sg/newsroom/remarks-by-mr-ong-ye-kung--minister-for-health-and-coordinating-minister-for-social-policies--at-the-doorstop-interview-to-update-on-the-salary-guidelines-for-the-community-care-sector--at-alexandra-hospital/',
+      '',
+      '一、政策核心：从“加钱”走向“稳供给”',
+      'MOH此次释放的信息不只是薪资数字，而是针对老龄化时代照护人力结构性短缺的系统响应：覆盖约2.3万人、总年薪提升约7%或以上，并有首阶段财政支持配套。',
+      '',
+      '二、为什么这一步关键',
+      '社区照护是医院减压与居家养老的中间层。若该层人力流失，急性医疗端将承受更大反弹压力。薪酬与补贴联动，实质是在为未来需求高峰提前“买容量”。',
+      '',
+      '三、落地关注点',
+      '1) 各岗位加薪幅度是否分层清晰；',
+      '2) 机构获得资助的条件是否与服务质量挂钩；',
+      '3) 实施后6-12个月离职率、招聘周期是否改善。',
+      '',
+      '结语',
+      '对新加坡老龄照护体系而言，这是一项典型“供给侧保基本盘”政策，其成效将直接影响后续居家和社区照护扩容速度。'
+    ]
+  },
+  {
+    slug: 'sg-aac-bto-planning-criteria-20260213-cn',
+    title: 'AIC与MOH的AAC布点逻辑：新BTO养老服务进入“前置规划”阶段',
+    date: '2026-02-19',
+    author: 'WaymoChang',
+    excerpt: '基于 MOH 国会答复的原创解读：活跃乐龄中心（AAC）选址不再是被动补位，而是数据驱动的社区养老基础设施规划。',
+    content: [
+      '【版权说明】本文为原创中文深度解读，不是原文逐字翻译。原始内容版权归新加坡卫生部（MOH）所有。',
+      '原文链接： https://www.moh.gov.sg/newsroom/criteria-for-location-of-active-ageing-centres-in-new-bto-estates/',
+      '',
+      '一、这则问答释放了什么信号？',
+      'MOH答复明确，AAC布局将综合当前与预测老年人口、在地服务需求与可达性，并由AIC与相关方沟通时间表。',
+      '',
+      '二、政策含义',
+      '这意味着社区养老资源配置从“入住后补点”转向“建设前预判”，可以更早把健康促进、社交支持和照护转介嵌入新镇。',
+      '',
+      '三、对行业与机构的启示',
+      '运营方应提前准备社区触达、活动设计与转介协同能力，而非等中心启用后再补流程。',
+      '',
+      '结语',
+      'AAC布点方法论的清晰化，本质上是老龄社会治理能力的前移。'
+    ]
+  },
+  {
+    slug: 'sg-budget2026-cpf-lifecycle-scheme-cn',
+    title: 'Budget 2026 后的养老金融升级：CPF生命周期投资方案深度解读',
+    date: '2026-02-19',
+    author: 'WaymoChang',
+    excerpt: '基于 CNA（引述MOM/CPF Board）报道的原创解读：新方案如何在“稳健与增值”之间重塑退休储蓄路径。',
+    content: [
+      '【版权说明】本文为原创中文深度解读，不是原文逐字翻译。原始报道版权归 CNA 所有。',
+      '原文链接： https://www.channelnewsasia.com/singapore/budget-2026-cpf-life-cycle-investment-retirement-5925641',
+      '',
+      '一、政策要点',
+      'CPF将在2028年推出自愿参与的生命周期投资方案，强调低成本、分散化、自动降风险，目标人群是愿意承担适度风险但不擅长主动选基的成员。',
+      '',
+      '二、为什么现在推出',
+      '在人口老龄化与长期退休充足性压力并存的背景下，单一“保守增值”路径难以满足所有人。该方案为年轻到中年群体提供了更长期的风险收益配置工具。',
+      '',
+      '三、关键执行变量',
+      '1) 费用上限是否足够低；',
+      '2) 产品说明是否做到可理解与可比较；',
+      '3) 投资者教育能否降低追涨杀跌与中途退出。',
+      '',
+      '结语',
+      '这不是对现有CPF体系的替代，而是对退休金融工具箱的补全。'
+    ]
+  },
+  {
+    slug: 'sg-budget2026-cpf-topup-ltcf-impact-cn',
+    title: '从CPF补充到长护基金增资：Budget 2026 的银发支付能力再校准',
+    date: '2026-02-19',
+    author: 'WaymoChang',
+    excerpt: '基于 Business Times 报道的原创解读：一次预算动作如何同时作用于退休储蓄、长护可负担性与高龄就业。',
+    content: [
+      '【版权说明】本文为原创中文深度解读，不是原文逐字翻译。原始报道版权归 The Business Times 所有。',
+      '原文链接： https://www.businesstimes.com.sg/singapore/budget-2026-s1500-cpf-top-seniors-higher-contribution-rates-older-workers',
+      '',
+      '一、三条主线并行',
+      '报道涉及最高S$1,500 CPF补充、55-65岁缴费率继续上调、Long-Term Care Support Fund增资S$4亿。三项政策共同指向“老龄支付能力”与“照护可持续性”。',
+      '',
+      '二、政策组合价值',
+      '单看任何一项都像局部修补；合在一起看，是把退休、就业和长期照护支付纳入同一框架，提升系统韧性。',
+      '',
+      '三、建议关注',
+      '后续应重点跟踪资格门槛、补贴分配口径与企业端过渡支持执行细则。',
+      '',
+      '结语',
+      'Budget 2026 在银发议题上的价值，不仅在“加码”，更在“联动”。'
+    ]
+  },
+  {
+    slug: 'sg-silver-tech-social-robots-pilot-2026-cn',
+    title: '从“有趣”到“有证据”：新加坡社交机器人长者试点的产业启示',
+    date: '2026-02-19',
+    author: 'WaymoChang',
+    excerpt: '基于 The Straits Times 报道的原创解读：银发科技落地的关键不是演示效果，而是可量化、可复制、可治理。',
+    content: [
+      '【版权说明】本文为原创中文深度解读，不是原文逐字翻译。原始报道版权归 The Straits Times 所有。',
+      '原文链接： https://www.straitstimes.com/tech/robots-to-mingle-with-seniors-at-care-centres-in-singapore-under-new-research-study',
+      '',
+      '一、试点价值在哪里',
+      '此次并非单点展示，而是多中心、约6个月、约70名长者的正式研究，目标是判断是否长期部署及部署规模。',
+      '',
+      '二、对AgeTech的现实启示',
+      '银发科技若要从“媒体热点”变成“服务能力”，必须回答三件事：是否改善参与度、是否减轻一线负担、是否在隐私和伦理上可持续。',
+      '',
+      '三、建议指标',
+      '建议持续追踪活动参与率、情绪状态变化、护理工时与家属满意度。',
+      '',
+      '结语',
+      '只有进入评估与治理闭环，银发机器人才可能成为照护体系的正式组成部分。'
+    ]
+  },
+  {
+    slug: 'sg-sgh-youth-eldercare-pipeline-20260128-cn',
+    title: 'SGH青年助老计划解读：老龄医疗人力“前端储备”新路径',
+    date: '2026-02-19',
+    author: 'WaymoChang',
+    excerpt: '基于 CNA 视频报道的原创解读：通过青年训练与志愿实践，为医院与社区照护建立可持续的人才管道。',
+    content: [
+      '【版权说明】本文为原创中文深度解读，不是原文逐字翻译。原始报道版权归 CNA 所有。',
+      '原文链接： https://www.channelnewsasia.com/watch/new-programme-trains-youths-help-seniors-in-hospital-and-community-5888881',
+      '',
+      '一、项目看点',
+      '约2,000名青年将通过三年合作进入医院与社区场景，承担支持性工作并接受训练。',
+      '',
+      '二、为什么重要',
+      '这类项目短期可补充非临床支持能力，长期可提升医疗与照护行业的人才认知与转化率。',
+      '',
+      '三、观察重点',
+      '应关注志愿者留存、岗位匹配、对临床团队工作负担的净影响，以及患者体验变化。',
+      '',
+      '结语',
+      '在人口结构变化下，人力供给不能只靠“后端招聘”，还要依赖“前端培养”。'
+    ]
   }
 ];
