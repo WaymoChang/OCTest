@@ -41,9 +41,67 @@
 
       const content = document.createElement('div');
       content.className = 'content';
-      (post.content || []).forEach((line) => {
+
+      const lines = post.content || [];
+
+      // Optional highlight box from first meaningful paragraph
+      const firstMeaningful = lines.find((x) => (x || '').trim() && !/^\s*[一二三四五六七八九十]+、/.test((x || '').trim()));
+      if (firstMeaningful) {
+        const summary = document.createElement('div');
+        summary.className = 'summary-box';
+
+        const st = document.createElement('div');
+        st.className = 'summary-title';
+        st.textContent = '核心摘要';
+
+        const sp = document.createElement('p');
+        sp.textContent = firstMeaningful;
+
+        summary.appendChild(st);
+        summary.appendChild(sp);
+        content.appendChild(summary);
+      }
+
+      (lines).forEach((line) => {
+        const text = (line || '').trim();
+
+        if (!text) {
+          const gap = document.createElement('div');
+          gap.className = 'line-gap';
+          content.appendChild(gap);
+          return;
+        }
+
+        // Section title: 一、二、三…
+        if (/^[一二三四五六七八九十]+、/.test(text)) {
+          const h3 = document.createElement('h3');
+          h3.className = 'section-title';
+          h3.textContent = text;
+          content.appendChild(h3);
+          return;
+        }
+
+        // Inline list item
+        if (/^[-•]\s+/.test(text)) {
+          const li = document.createElement('p');
+          li.className = 'bullet-line';
+          li.textContent = text.replace(/^[-•]\s+/, '');
+          content.appendChild(li);
+          return;
+        }
+
+        // Callout style lines
+        if (/^【.*】/.test(text) || /^原文链接[:：]/.test(text) || /^版权说明[:：]/.test(text) || /^结语/.test(text)) {
+          const callout = document.createElement('p');
+          callout.className = 'callout-line';
+          callout.textContent = text;
+          content.appendChild(callout);
+          return;
+        }
+
         const para = document.createElement('p');
-        para.textContent = line || '';
+        para.className = 'body-line';
+        para.textContent = text;
         content.appendChild(para);
       });
 
