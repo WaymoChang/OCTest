@@ -24,8 +24,8 @@ jobs:
       - name: Lint CSS
         run: npx --yes stylelint "**/*.css"
 
-      - name: Validate blog posts.js syntax
-        run: node -e "const fs=require('fs'); const code=fs.readFileSync('blog/assets/posts.js','utf8'); new Function(code); console.log('posts.js syntax OK');"
+      - name: Validate blog posts.json schema (basic)
+        run: node -e "const fs=require('fs'); const data=JSON.parse(fs.readFileSync('blog/assets/posts.json','utf8')); if(!Array.isArray(data)) throw new Error('posts.json must be an array'); for (const p of data){ if(!p.slug||!p.title||!p.date||!p.author||!p.excerpt||!Array.isArray(p.content)) throw new Error('invalid post schema'); } console.log('posts.json schema OK');"
 
   react-tests:
     name: React Unit Tests

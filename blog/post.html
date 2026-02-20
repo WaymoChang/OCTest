@@ -19,16 +19,9 @@
 
     <script>
     async function loadPostsData() {
-      const src = `./assets/posts.js?v=${Date.now()}`;
-      await new Promise((resolve, reject) => {
-        const el = document.createElement('script');
-        el.src = src;
-        el.async = true;
-        el.onload = resolve;
-        el.onerror = reject;
-        document.body.appendChild(el);
-      });
-      return Array.isArray(window.posts) ? window.posts : [];
+      const res = await fetch(`./assets/posts.json?v=${Date.now()}`, { cache: 'no-store' });
+      if (!res.ok) throw new Error('Failed to load posts.json');
+      return await res.json();
     }
 
     (async () => {
