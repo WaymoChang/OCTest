@@ -196,3 +196,6 @@ npm run blog:validate
 ```
 
 该命令会校验 `blog/assets/posts.json` 的 JSON 合法性与基础字段结构。
+
+
+- Blog 列表页排序规则：优先按 `sourceDate`（原文发布时间）倒序；若无则按 `date` 倒序。

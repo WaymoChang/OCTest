@@ -57,6 +57,12 @@ for (let i = 0; i < posts.length; i++) {
     hasError = true;
   }
 
+
+  if (p.sourceDate != null && (typeof p.sourceDate !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(p.sourceDate))) {
+    console.error(`❌ ${at}.sourceDate must match YYYY-MM-DD when provided`);
+    hasError = true;
+  }
+
   if (typeof p.author !== 'string' || !p.author.trim()) {
     console.error(`❌ ${at}.author must be a non-empty string`);
     hasError = true;
