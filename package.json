@@ -1,0 +1,7 @@
+{
+  "name": "octest-root",
+  "private": true,
+  "scripts": {
+    "blog:validate": "node scripts/validate-posts-json.mjs"
+  }
+}
