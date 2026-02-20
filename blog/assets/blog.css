@@ -187,3 +187,11 @@ body {
 :root[data-theme="light"] .btn {
   color: #072432;
 }
+
+
+.source-link {
+  color: var(--accent);
+  text-decoration: underline;
+  word-break: break-all;
+}
+.source-link:hover { opacity: .9; }
