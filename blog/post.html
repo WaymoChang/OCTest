@@ -122,6 +122,27 @@
           if (/^【.*】/.test(text) || /^原文链接[:：]/.test(text) || /^版权说明[:：]/.test(text) || /^结语/.test(text)) {
             const callout = document.createElement('p');
             callout.className = 'callout-line';
+
+            if (/^原文链接[:：]/.test(text)) {
+              const m = text.match(/^原文链接[:：]\s*(https?:\/\/\S+)\s*$/i);
+              if (m) {
+                const label = document.createElement('span');
+                label.textContent = '原文链接：';
+
+                const link = document.createElement('a');
+                link.href = m[1];
+                link.textContent = m[1];
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.className = 'source-link';
+
+                callout.appendChild(label);
+                callout.appendChild(link);
+                content.appendChild(callout);
+                return;
+              }
+            }
+
             callout.textContent = text;
             content.appendChild(callout);
             return;
