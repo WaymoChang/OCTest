@@ -24,6 +24,9 @@ jobs:
       - name: Lint CSS
         run: npx --yes stylelint "**/*.css"
 
+      - name: Validate blog posts.js syntax
+        run: node -e "const fs=require('fs'); const code=fs.readFileSync('blog/assets/posts.js','utf8'); new Function(code); console.log('posts.js syntax OK');"
+
   react-tests:
     name: React Unit Tests
     runs-on: ubuntu-latest
