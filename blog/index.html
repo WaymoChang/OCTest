@@ -32,8 +32,13 @@
       const list = document.getElementById('post-list');
       const fmt = (d) => new Date(d).toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' });
       const posts = await loadPostsData();
+      const sortedPosts = [...posts].sort((a, b) => {
+        const da = new Date((a.sourceDate || a.date || '') + 'T00:00:00').getTime() || 0;
+        const db = new Date((b.sourceDate || b.date || '') + 'T00:00:00').getTime() || 0;
+        return db - da;
+      });
 
-      posts.forEach((p) => {
+      sortedPosts.forEach((p) => {
         const card = document.createElement('article');
         card.className = 'card';
 
@@ -42,7 +47,7 @@
 
         const meta = document.createElement('p');
         meta.className = 'meta';
-        meta.textContent = `${fmt(p.date)} · ${p.author || ''}`;
+        meta.textContent = `${fmt(p.sourceDate || p.date)} · ${p.author || ''}`;
 
         const excerpt = document.createElement('p');
         excerpt.className = 'excerpt';
