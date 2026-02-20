@@ -185,3 +185,14 @@ npm run test
 
 - Source of truth: `blog/assets/posts.json`
 - `posts.js` is deprecated and no longer used by the pages.
+
+
+## Blog Validation
+
+在提交前可本地执行：
+
+```bash
+npm run blog:validate
+```
+
+该命令会校验 `blog/assets/posts.json` 的 JSON 合法性与基础字段结构。
