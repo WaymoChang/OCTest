@@ -179,3 +179,9 @@ npm run test
 2. 设置：`provider: "plausible"`、`enabled: true`
 3. 填好 `plausible.domain`（建议你的站点主域）
 4. 提交后即可在不改页面代码的情况下启用跨设备统计
+
+
+## Blog Data Source
+
+- Source of truth: `blog/assets/posts.json`
+- `posts.js` is deprecated and no longer used by the pages.
