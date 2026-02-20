@@ -315,7 +315,7 @@ window.posts = [
     excerpt: '基于《纽约时报》观点的中文深度解读：AI 的分水岭在于从“可用工具”变成“组织级执行系统”，岗位不一定先消失，但流程和产能差距会先被重写。',
     content: [
       '【版权说明】本文为原创中文深度解读，不是原文逐字翻译。原始报道版权归 The New York Times 所有。',
-      '原文标题：The A.I. Disruption We've Been Waiting for Has Arrived',
+      '原文标题：The A.I. Disruption We\'ve Been Waiting for Has Arrived',
       '',
       '一、这篇文章真正想说的是什么？',
       '核心不是“AI又更聪明了一点”，而是“AI已经开始改写真实生产流程”。当企业把AI从试点预算转为业务KPI时，冲击就从概念走向现实。',
