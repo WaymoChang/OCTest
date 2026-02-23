@@ -29,6 +29,35 @@
     "sourceDate": "2026-02-20"
   },
   {
+    "slug": "agetech-after-dark-captify-20260224",
+    "title": "CES 2026 AgeTech After Dark：Captify 用字幕眼镜打破听力与交流壁垒",
+    "date": "2026-02-24",
+    "author": "WaymoChang",
+    "excerpt": "AARP AgeTech After Dark 在 CES 2026 现场颁出冠军，Captify 的字幕眼镜与 Accelera、ATDev、Kinemo、Memcara 等团队一起，强调 AgeTech 的真实可用性与多感官自主。",
+    "content": [
+      "【版权说明】本文为中文深度解读与观点整理，不是原文逐字翻译。原始报道版权归 AARP 所有。",
+      "原文链接： https://www.aarp.org/personal-technology/captify-wins-agetech-after-dark-2026/",
+      "",
+      "一、事件概览：可视化字幕赢得 AgeTech After Dark",
+      "在CES 2026 的 AgeTech After Dark pitch competition 中，年仅一岁的 Captify 夺下 $10,000 冠军。AARP AgeTech Collaborative 继续把展会舞台留给可信、可用、可达的硬件和服务，让“听力障碍者的交流质量”成为赛道主张之一。",
+      "",
+      "二、Captify 的三层价值：隐私、可及、日常",
+      "Captify 智能眼镜外观近似普通框架，却内置双麦克风 + AI 字幕引擎，标称出自嘈杂环境也能维持 98% 准确率，支持 70 多种语言翻译。$499/$799 的前端定价＋$15/月的 AI 摘要订阅，把“听力辅助”从医院级服务变成日常可负担、可穿戴的 digital companion。它的创新不只是 capture audio，而是把文字与语义还原给佩戴者，让他们不用依赖“转述”也能参与对话。",
+      "",
+      "三、AgeTech After Dark 的整体信号：自主+多模+人性化",
+      "本届其他四强（Accelera、ATDev、Kinemo、Memcara）也都回应了一个共同挑战：如何让身体机能、认知、日常操作更自洽地与科技协作？Accelera 的 Proprio 腕带试图通过振动刺激提前预防跌倒；ATDev 交付远程寡视的机器人与康复平台；Kinemo 让动作微痕、面颊、脚步变成指令；Memcara 则用音乐释放患有记忆障碍者的沟通潜能。这些项目的结合展示AARP希望 AgeTech 不只是“黑科技”，也是“把身体、语言、记忆这三条线缝合成完整体验”。",
+      "",
+      "四、对 AgeTech 策略人的提醒：场景落地、可用体验、后续服务",
+      "— Captify 提醒我们，比起把每个场景塞进一个 app，更重要的是把“问题体验”抽象成可重复的交互：实时字幕 + 内容摘要就是这样一个“解构交流”的模式；",
+      "— AgeTech After Dark 反复强调“多感官”与“辅助独立”，提示投资人优先评估：解决一个“具体功能缺口”后能否延展到一条日常路径？",
+      "— 年轻创企被 AARP 连续提到，说明 AgeTech Collaborative 仍在培育以“正交硬件 + 社区验证”打磨出的产品，同时也在测试“是否能让家人/照护者也信任”这层治理。",
+      "",
+      "结语",
+      "CES 的这个舞台告诉我们：AgeTech 不是在数据中心里拼参数排名，而是在展台一侧让长者、听力障碍者、照护者一起戴设备、测体验、聊产品。Captify 夺冠是信号：在 2026 年，AgeTech 更需要关注“让科技像空气一样自然”，而不只是“再多一个 AI 模型”。"
+    ],
+    "sourceDate": "2026-01-08"
+  },
+  {
     "slug": "openai-chatgpt-ads-launch-monetization-cn-analysis-20260223",
     "title": "ChatGPT 正式开放广告：AI 货币化新纪元的起跑信号",
     "date": "2026-02-23",
