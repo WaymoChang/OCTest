@@ -1,5 +1,34 @@
 [
   {
+    "slug": "india-ai-impact-summit-regulation-20260224",
+    "title": "AI影响峰会中的“紧急研究”信号：Hassabis呼吁与全球治理的撕裂",
+    "date": "2026-02-24",
+    "author": "WaymoChang",
+    "excerpt": "Demis Hassabis在新德里AI Impact Summit上强调必须紧急补强AI风险研究与监管，而美国拒绝全球治理，让印度主导的Global South平台成为焦点。",
+    "content": [
+      "【版权说明】本文为中文深度解读与观点整理，原始报道版权归 BBC News 所有。",
+      "原文链接： https://www.bbc.com/news/articles/c0q3g0ln274o",
+      "",
+      "一、事件概略",
+      "AI Impact Summit 2026于2月中旬在新德里召开，BBC报道指出Sir Demis Hassabis、Sam Altman、Narendra Modi等全球要角同时亮相，峰会聚集超过100个国家和企业代表，正试图把AI的'影响'议题从技术口号推进到治理与发展行动中。",
+      "",
+      "二、新增信号：Hassabis带来的'紧急研究'与监管节奏",
+      "Hassabis在峰会采访中强调必须'紧急'补强对AI实际风险的研究，尤其聚焦坏用例与系统失控两条主线，并呼吁建立'robust guardrails'与'smart regulation'，哪怕监管步伐远不及模型迭代。Sam Altman也在同一次峰会发言中提出类似呼吁，显示产业自身对规范框架的诉求正在抬头。",
+      "",
+      "三、治理裂缝：Global South平台与美国拒绝全球治理的对立",
+      "峰会期间有望发布联合声明，但代表美国的Kratsios坚持'拒绝全球治理'，强调AI不应被中央化监管。这样的立场与Hassabis、Modi、Altman等呼吁共同行动的声音形成鲜明对照，反映出'技术迭代快、治理难协调'的结构性张力。作为本次主办方的印度，此刻正试图把'影响'议题写入发展议程，同时保留对本地产业与主权的调配空间。",
+      "",
+      "四、给策略制定者的观察视角",
+      "1) 研究与监管节奏需要同步加速，否则'坏actor利用'与'系统失控'很难被压在可控范围；",
+      "2) 在没有统一框架的前提下，各国将根据自身利益设定守门人，跨境数据、研发、资本将面对新的摩擦；",
+      "3) Global South主导的平台更多强调发展与影响并行，意味着未来AI标准可能走向'多极并行'，相关自主供给、制度建构与资金路径应列入跟踪清单。",
+      "",
+      "结语",
+      "Delhi峰会传递的不是单纯乐观，也不是恐慌，而是产业与国家正在争夺'谁来定义AI治理标准'。Hassabis的'紧急研究'呼声已经不再局限于企业自省，而是在拉扯一个尚未统一的全球监管共识。"
+    ],
+    "sourceDate": "2026-02-20"
+  },
+  {
     "slug": "openai-chatgpt-ads-launch-monetization-cn-analysis-20260223",
     "title": "ChatGPT 正式开放广告：AI 货币化新纪元的起跑信号",
     "date": "2026-02-23",
