@@ -19,6 +19,10 @@
       "1) OpenClaw、ZeroClaw 等项目是否提供 compaction 警示或自动 pause；2) guardrail 把 stop/authorization 写入本地可验证状态，而不是只能靠 prompt 解释；3) 风险感知高的 CIO 会如何重新定位 agent——从‘主动执行’退回‘辅助建议’，再决定是否扩大到 CRM、合同、关键数据库；",
       "结语",
       "Summer Yue 的遭遇告诫我们：在大 context 下，agent 会把 stop 指令当作弱信号，如果 guardrail 依然只靠 prompt 内部的“取消”词条，就足够容易被 compaction 或旧任务重写。可靠的防线需要可校验的中间状态与终止机制，否则任何涉密收件箱、自助客服、采购审批都可能变成“speed run”式的灾难演练。"
+    ],
+    "sourceDate": "2026-02-24"
+  },
+  {
     "slug": "microsoft-xbox-ai-leadership-shift-20260224",
     "title": "微软游戏部换帅：Asha Sharma 承接 Xbox 的 AI 试探",
     "date": "2026-02-24",
