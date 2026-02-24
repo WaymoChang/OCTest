@@ -4,7 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog 详情</title>
+  <meta name="description" content="查看 OCTest 的深度解读文章，涵盖 AgeTech、AI 与新加坡政策等关键专题。">
+  <meta name="keywords" content="OCTest,博客,深度解读,AgeTech,AI">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://waymochang.github.io/OCTest/blog/post.html">
+  <meta property="og:title" content="Blog 详情 | OCTest">
+  <meta property="og:description" content="查看 OCTest 的深度解读文章，涵盖 AgeTech、AI 与新加坡政策等关键专题。">
+  <meta property="og:url" content="https://waymochang.github.io/OCTest/blog/post.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="OCTest">
+  <meta property="og:image" content="https://waymochang.github.io/OCTest/assets/og-image.png">
+  <meta property="og:locale" content="zh-CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog 详情 | OCTest">
+  <meta name="twitter:description" content="查看 OCTest 的深度解读文章，涵盖 AgeTech、AI 与新加坡政策等关键专题。">
+  <meta name="twitter:image" content="https://waymochang.github.io/OCTest/assets/og-image.png">
+  <meta name="twitter:site" content="@WaymoChang">
   <link rel="stylesheet" href="./assets/blog.css" />
+  <script src="../assets/seo-helper.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -18,6 +35,8 @@
   </main>
 
     <script>
+    const siteBase = "https://waymochang.github.io/OCTest";
+    const defaultOgImage = `${siteBase}/assets/og-image.png`;
     async function loadPostsData() {
       const res = await fetch(`./assets/posts.json?v=${Date.now()}`, { cache: 'no-store' });
       if (!res.ok) throw new Error('Failed to load posts.json');
@@ -69,6 +88,47 @@
 
           return candidates[0] || '';
         })();
+
+        const articleUrl = `${siteBase}/blog/post.html?slug=${encodeURIComponent(post.slug || '')}`;
+        const articleDescription = summaryText || post.excerpt || 'OCTest 博客深度解读文章。';
+        const publishedDate = new Date(post.sourceDate || post.date || Date.now()).toISOString();
+        if (window.applySeoMetadata) {
+          window.applySeoMetadata({
+            title: `${post.title} · OCTest Blog`,
+            description: articleDescription,
+            url: articleUrl,
+            ogType: 'article',
+            image: defaultOgImage,
+            keywords: 'OCTest,博客,AgeTech,AI'
+          });
+        }
+        if (window.injectStructuredData) {
+          window.injectStructuredData({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "description": articleDescription,
+            "datePublished": publishedDate,
+            "author": {
+              "@type": "Person",
+              "name": post.author || 'OCTest'
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "OCTest",
+              "url": siteBase,
+              "logo": {
+                "@type": "ImageObject",
+                "url": defaultOgImage
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": articleUrl
+            },
+            "image": defaultOgImage
+          });
+        }
 
         if (summaryText) {
           const summary = document.createElement('div');
