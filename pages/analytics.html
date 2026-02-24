@@ -4,94 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Analytics · OCTest</title>
-  <meta name="description" content="展示站点分析与事件统计的仪表盘，向你揭示访问模式与点击热点。">
-  <meta name="keywords" content="OCTest,静态站点,AI,博客,实验">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://waymochang.github.io/OCTest/pages/analytics.html">
-  <meta property="og:title" content="Analytics · OCTest">
-  <meta property="og:description" content="展示站点分析与事件统计的仪表盘，向你揭示访问模式与点击热点。">
-  <meta property="og:url" content="https://waymochang.github.io/OCTest/pages/analytics.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="OCTest">
-  <meta property="og:image" content="https://waymochang.github.io/OCTest/assets/og-image.png">
-  <meta property="og:locale" content="zh-CN">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Analytics · OCTest">
-  <meta name="twitter:description" content="展示站点分析与事件统计的仪表盘，向你揭示访问模式与点击热点。">
-  <meta name="twitter:image" content="https://waymochang.github.io/OCTest/assets/og-image.png">
-  <meta name="twitter:site" content="@WaymoChang">
+  <meta http-equiv="refresh" content="0; url=/analytics" />
+  <link rel="canonical" href="/analytics" />
   <link rel="stylesheet" href="../assets/site.css" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "url": "https://waymochang.github.io/OCTest/pages/analytics.html",
-    "name": "Analytics · OCTest",
-    "description": "展示站点分析与事件统计的仪表盘，向你揭示访问模式与点击热点。",
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": "https://waymochang.github.io/OCTest/"
-    }
-  }
+  <script>
+    window.location.replace('/analytics');
   </script>
 </head>
 <body>
-  <nav class="nav">
-    <a href="../index.html">Home</a>
-    <a href="../blog/index.html">Blog</a>
-    <a href="./about.html">About</a>
-    <a href="./changelog.html">Changelog</a>
-    <a href="./contact.html">Contact</a>
-    <a class="active" href="./analytics.html">Analytics</a>
-    <button id="theme-toggle" class="theme-toggle" type="button">☀️ Light</button>
-  </nav>
   <main class="wrap">
     <section class="card">
       <span class="badge">Legacy</span>
-      <h1>访问统计（本地）</h1>
-      <p class="small">此页面已标记为 legacy，后续功能维护转移到 Next 版 <a href="/analytics">/analytics</a>。</p>
-      <p class="small">说明：默认是浏览器本地埋点（localStorage）。你也可以在 assets/analytics-config.js 开启 Plausible，实现跨设备统计（Analytics Pro）。</p>
-      <div id="stats"></div>
-      <div id="pro-status" class="small"></div>
-      <button id="clear" class="link-btn" type="button">清空本地统计</button>
+      <h1>Analytics 已迁移</h1>
+      <p class="small">正在跳转到新版 Analytics：<a href="/analytics">/analytics</a></p>
     </section>
   </main>
-  <script src="../assets/theme.js"></script>
-  <script src="../assets/analytics-config.js"></script>
-  <script src="../assets/analytics.js"></script>
-  <script>
-    const KEY = 'octest.analytics.v1';
-    function read() {
-      try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; }
-    }
-    function render() {
-      const s = read();
-      const root = document.getElementById('stats');
-      const pvs = s.pageviews || {};
-      const rows = Object.entries(pvs).sort((a,b)=>b[1]-a[1]);
-      const total = rows.reduce((n, [,v]) => n+v, 0);
-      root.innerHTML = `
-        <p><strong>Total pageviews:</strong> ${total}</p>
-        <p><strong>Last updated:</strong> ${s.updatedAt || '-'}</p>
-        <h3>By path</h3>
-        <ul>${rows.map(([k,v])=>`<li><code>${k}</code> — ${v}</li>`).join('') || '<li>暂无数据</li>'}</ul>
-      `;
-    }
-    document.getElementById('clear').addEventListener('click', () => {
-      localStorage.removeItem(KEY);
-      
-    const cfg = window.OCTEST_ANALYTICS_CONFIG || {};
-    const pro = document.getElementById('pro-status');
-    const mode = cfg.enabled && cfg.provider === 'plausible' ? `Plausible 已启用（domain: ${(cfg.plausible||{}).domain || '-'})` : 'Plausible 未启用（当前 local-only）';
-    pro.textContent = `Analytics Pro 状态：${mode}`;
-    render();
-    });
-    
-    const cfg = window.OCTEST_ANALYTICS_CONFIG || {};
-    const pro = document.getElementById('pro-status');
-    const mode = cfg.enabled && cfg.provider === 'plausible' ? `Plausible 已启用（domain: ${(cfg.plausible||{}).domain || '-'})` : 'Plausible 未启用（当前 local-only）';
-    pro.textContent = `Analytics Pro 状态：${mode}`;
-    render();
-  </script>
 </body>
 </html>
