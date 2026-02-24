@@ -120,6 +120,13 @@ python3 -m http.server 8080
 > **AI 不只是回答问题，也可以和人一起把事情真正做完。**
 
 
+## 🌱 SEO 工具
+
+- `npm run seo:generate-sitemap` 读取 `blog/assets/posts.json` 与静态页面列表，生成根目录下可被搜索引擎消费的 `sitemap.xml`（可通过 `SITE_URL` 环境变量覆盖站点根路径）。
+- `robots.txt` 已经指向 `sitemap.xml`，提供基本抓取指令。
+- 所有页面/博客都补了 meta、Open Graph、Twitter 以及结构化数据；博客详情页会在客户端根据 slug 自动更新 canonical、summary 与 JSON-LD，因此分享预览与 Schema 都会更准确。
+- 站点默认 OG 预览图是 `assets/og-image.png`，你也可以替换它并在需要时更新 `assets/seo-helper.js` 里的 `defaultOgImage`。
+
 ## Blog Pages
 
 - Blog 列表: https://waymochang.github.io/OCTest/blog/
