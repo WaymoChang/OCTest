@@ -1,0 +1,18 @@
+/* Global styles */
+
+.spark {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: white;
+  opacity: 0.65;
+  box-shadow: 0 0 14px currentColor;
+  animation: float 9s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(120vh) translateX(0); opacity: 0; }
+  10% { opacity: .7; }
+  to { transform: translateY(-20vh) translateX(40px); opacity: 0; }
+}
