@@ -1,0 +1,197 @@
+:root[data-theme="dark"] {
+  --bg: #0b1220;
+  --card: #111a2e;
+  --text: #e8f0ff;
+  --muted: #9eb2d1;
+  --accent: #67e8f9;
+}
+:root[data-theme="light"] {
+  --bg: #f4f8ff;
+  --card: #ffffff;
+  --text: #0b1630;
+  --muted: #3f5275;
+  --accent: #0ea5b7;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(900px 500px at 15% 0%, #1d2b4f 0%, transparent 60%), var(--bg);
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(11,18,32,.7);
+}
+.topbar h1 { margin: 0; font-size: 20px; }
+.brand { color: var(--accent); text-decoration: none; font-weight: 600; }
+.container { max-width: 980px; margin: 0 auto; padding: 24px; }
+.intro { color: var(--muted); margin-bottom: 20px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.card, .post {
+  background: var(--card);
+  border: 1px solid color-mix(in srgb, var(--text) 16%, transparent);
+  border-radius: 14px;
+  padding: 18px;
+}
+.card h2, .post h2 { margin: 0 0 8px; }
+.meta { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+.excerpt { color: #d8e5fb; margin: 0 0 14px; }
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: #06212c;
+  background: linear-gradient(90deg, #67e8f9, #22d3ee);
+  text-decoration: none;
+  font-weight: 700;
+}
+.content p { line-height: 1.75; color: #d6e4fb; }
+
+
+/* Enhanced readability hierarchy for blog detail */
+.post h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  letter-spacing: -.4px;
+}
+
+.summary-box {
+  border: 1px solid rgba(103,232,249,.35);
+  background: linear-gradient(180deg, rgba(103,232,249,.10), rgba(103,232,249,.04));
+  border-radius: 12px;
+  padding: 14px 14px 10px;
+  margin: 8px 0 18px;
+}
+.summary-title {
+  font-weight: 800;
+  font-size: 13px;
+  color: #8ff4ff;
+  letter-spacing: .4px;
+  margin-bottom: 6px;
+}
+.summary-box p {
+  margin: 0;
+  color: #e7f7ff;
+  line-height: 1.7;
+}
+
+.section-title {
+  margin: 18px 0 8px;
+  padding-left: 10px;
+  border-left: 3px solid var(--accent);
+  color: #7eeeff;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.body-line {
+  margin: 8px 0;
+  line-height: 1.9;
+  color: #d6e4fb;
+}
+
+.callout-line {
+  margin: 10px 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  color: #cfe5ff;
+  line-height: 1.8;
+}
+
+.bullet-line {
+  margin: 6px 0 6px 2px;
+  padding-left: 12px;
+  position: relative;
+  color: #d6e4fb;
+  line-height: 1.8;
+}
+.bullet-line::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #7ce9ff;
+}
+
+.line-gap { height: 8px; }
+
+
+.theme-toggle {
+  margin-left: auto;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+
+:root[data-theme="light"] .card h2,
+:root[data-theme="light"] .post h2 {
+  color: #0a1735;
+}
+
+:root[data-theme="light"] .meta {
+  color: #42577c;
+}
+
+:root[data-theme="light"] .excerpt,
+:root[data-theme="light"] .body-line,
+:root[data-theme="light"] .content p {
+  color: #10213f;
+}
+
+:root[data-theme="light"] .section-title {
+  color: #0f4f7a;
+  border-left-color: #0ea5b7;
+}
+
+:root[data-theme="light"] .callout-line {
+  color: #10213f;
+  background: rgba(14, 165, 183, 0.08);
+  border-color: rgba(14, 165, 183, 0.25);
+}
+
+:root[data-theme="light"] .summary-box {
+  background: linear-gradient(180deg, rgba(14,165,183,.14), rgba(14,165,183,.06));
+  border-color: rgba(14,165,183,.35);
+}
+
+:root[data-theme="light"] .summary-title {
+  color: #0e6f84;
+}
+
+
+:root[data-theme="light"] .card,
+:root[data-theme="light"] .post {
+  background: #ffffff;
+  border-color: rgba(10, 23, 53, 0.14);
+  box-shadow: 0 8px 24px rgba(13, 38, 76, 0.08);
+}
+
+:root[data-theme="light"] .btn {
+  color: #072432;
+}
+
+
+.source-link {
+  color: var(--accent);
+  text-decoration: underline;
+  word-break: break-all;
+}
+.source-link:hover { opacity: .9; }
