@@ -1,11 +1,11 @@
-import Nav from "../../components/Nav";
+import Header from "../../components/Header";
 
 export const dynamic = "force-static";
 
 export default function ChangelogPage() {
   return (
     <>
-      <Nav active="changelog" />
+      <Header title="Changelog" backHref="/" backLabel="← OCTest" />
       <main className="wrap">
         <section className="card">
           <span className="badge">Project updates</span>

@@ -1,11 +1,11 @@
-import Nav from "../../components/Nav";
+import Header from "../../components/Header";
 
 export const dynamic = "force-static";
 
 export default function ContactPage() {
   return (
     <>
-      <Nav active="contact" />
+      <Header title="Contact" backHref="/" backLabel="← OCTest" />
       <main className="wrap">
         <section className="card">
           <span className="badge">Get in touch</span>
