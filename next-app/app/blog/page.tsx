@@ -30,7 +30,7 @@ export default function BlogPage() {
           ← OCTest
         </Link>
         <h1>Blog 列表</h1>
-        <ThemeToggle />
+        <ThemeToggle className="theme-toggle" />
       </header>
 
       <main className="container">

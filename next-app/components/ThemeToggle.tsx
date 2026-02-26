@@ -22,7 +22,11 @@ function applyTheme(theme: Theme) {
   } catch {}
 }
 
-export default function ThemeToggle() {
+export default function ThemeToggle({
+  className = "",
+}: {
+  className?: string;
+}) {
   const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
@@ -41,7 +45,7 @@ export default function ThemeToggle() {
   return (
     <button
       id="theme-toggle"
-      className="theme-toggle"
+      className={className}
       type="button"
       onClick={() => {
         const next: Theme = theme === "dark" ? "light" : "dark";

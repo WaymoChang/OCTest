@@ -53,7 +53,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           ← 返回列表
         </Link>
         <h1>Blog 详情</h1>
-        <ThemeToggle />
+        <ThemeToggle className="theme-toggle" />
       </header>
 
       <main className="container">

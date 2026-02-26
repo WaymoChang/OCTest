@@ -1,10 +1,20 @@
 :root {
   --bg1: #0a0f1f;
   --bg2: #111a3a;
+  --spot1: #1f2a57;
+  --spot2: #3a1457;
+  --neon1: #00f5ff;
+  --neon2: #7b61ff;
+  --neon3: #ff4ecd;
   --text: #e6f1ff;
   --muted: #9db0d0;
-  --card: rgba(12, 18, 38, 0.65);
-  --border: rgba(255,255,255,0.14);
+  --card-bg: rgba(12, 18, 38, 0.65);
+  --card-border: rgba(255,255,255,0.14);
+  --card-shadow1: rgba(0,245,255,0.2);
+  --card-shadow2: rgba(123,97,255,0.18);
+  --grid-line: rgba(255,255,255,0.07);
+  --card: var(--card-bg);
+  --border: var(--card-border);
   --accent: #67e8f9;
 }
 * { box-sizing: border-box; }
@@ -13,8 +23,8 @@ body {
   min-height: 100vh;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: var(--text);
-  background: radial-gradient(1200px 600px at 20% 10%, #1f2a57 0%, transparent 60%),
-              radial-gradient(1000px 500px at 90% 90%, #3a1457 0%, transparent 60%),
+  background: radial-gradient(1200px 600px at 20% 10%, var(--spot1) 0%, transparent 60%),
+              radial-gradient(1000px 500px at 90% 90%, var(--spot2) 0%, transparent 60%),
               linear-gradient(135deg, var(--bg1), var(--bg2));
 }
 .nav {
@@ -71,20 +81,40 @@ ul { margin: 8px 0 0 18px; }
 :root[data-theme="dark"] {
   --bg1: #0a0f1f;
   --bg2: #111a3a;
+  --spot1: #1f2a57;
+  --spot2: #3a1457;
+  --neon1: #00f5ff;
+  --neon2: #7b61ff;
+  --neon3: #ff4ecd;
   --text: #e6f1ff;
   --muted: #9db0d0;
-  --card: rgba(12, 18, 38, 0.65);
-  --border: rgba(255,255,255,0.14);
+  --card-bg: rgba(12, 18, 38, 0.65);
+  --card-border: rgba(255,255,255,0.14);
+  --card-shadow1: rgba(0,245,255,0.2);
+  --card-shadow2: rgba(123,97,255,0.18);
+  --grid-line: rgba(255,255,255,0.07);
+  --card: var(--card-bg);
+  --border: var(--card-border);
   --accent: #67e8f9;
 }
 
 :root[data-theme="light"] {
-  --bg1: #f4f8ff;
+  --bg1: #f7fbff;
   --bg2: #e8f0ff;
-  --text: #0f1b33;
-  --muted: #52627e;
-  --card: rgba(255, 255, 255, 0.88);
-  --border: rgba(16, 35, 70, 0.14);
+  --spot1: #d8ecff;
+  --spot2: #f4dfff;
+  --neon1: #00a8b8;
+  --neon2: #5b7cff;
+  --neon3: #cf4cc0;
+  --text: #10213f;
+  --muted: #4f678d;
+  --card-bg: rgba(255, 255, 255, 0.88);
+  --card-border: rgba(16,35,70,0.16);
+  --card-shadow1: rgba(16, 118, 130, 0.18);
+  --card-shadow2: rgba(91,124,255,0.16);
+  --grid-line: rgba(20,45,88,0.08);
+  --card: var(--card-bg);
+  --border: var(--card-border);
   --accent: #0ea5b7;
 }
 
