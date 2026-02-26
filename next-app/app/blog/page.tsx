@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ThemeToggle from "../../components/ThemeToggle";
+import Header from "../../components/Header";
 import { getAllPosts } from "../../lib/posts";
 
 export const dynamic = "force-static";
@@ -25,13 +25,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <header className="topbar">
-        <Link className="brand" href="/">
-          ← OCTest
-        </Link>
-        <h1>Blog 列表</h1>
-        <ThemeToggle className="theme-toggle" />
-      </header>
+      <Header title="Blog 列表" backHref="/" backLabel="← OCTest" />
 
       <main className="container">
         <section className="intro">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ThemeToggle from "../../../components/ThemeToggle";
+import Header from "../../../components/Header";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "../../../lib/posts";
 
@@ -48,13 +48,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <header className="topbar">
-        <Link className="brand" href="/blog">
-          ← 返回列表
-        </Link>
-        <h1>Blog 详情</h1>
-        <ThemeToggle className="theme-toggle" />
-      </header>
+      <Header title="Blog 详情" backHref="/blog" backLabel="← 返回列表" />
 
       <main className="container">
         <article className="post">
