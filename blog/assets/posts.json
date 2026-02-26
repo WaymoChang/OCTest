@@ -1,5 +1,36 @@
 [
   {
+    "slug": "anthropic-acquires-vercept-agentic-computer-use-20260227",
+    "title": "Anthropic 收购 Vercept：Agentic 电脑操作赛道进入“平台整合”阶段",
+    "date": "2026-02-27",
+    "author": "WaymoChang",
+    "excerpt": "TechCrunch 报道 Anthropic 收购 Vercept，并将在 3/25 关闭其云端电脑操作产品 Vy。信号是 Agentic 电脑使用能力正在从初创试验走向平台级整合与产品化收拢。",
+    "content": [
+      "【版权说明】本文为中文深度解读与观点整理，不是原文逐字翻译。原始报道版权归 TechCrunch 所有。",
+      "原文链接：https://techcrunch.com/2026/02/25/anthropic-acquires-vercept-ai-startup-agents-computer-use-founders-investors/",
+      "",
+      "一、事件要点",
+      "TechCrunch 报道，Anthropic 收购计算机使用类 agent 创业公司 Vercept。Vercept 的产品 Vy 提供云端电脑操作能力，可让 agent 在远程 MacBook 上执行任务。Anthropic 将于 3 月 25 日关闭 Vercept 产品，并吸纳部分团队成员加入。",
+      "",
+      "二、行业含义：电脑操作 agent 正从“功能验证”转向“平台整合”",
+      "在过去一年，电脑操作 agent 主要以创业公司方式验证能力边界（UI 操作、任务串联、跨应用执行）。此次并购意味着大厂开始把“电脑使用”能力作为平台级能力整合，而不是独立产品继续试错。未来功能形态很可能嵌入 Claude 等主线产品，而非单独售卖。",
+      "",
+      "三、对市场的三点影响",
+      "1) 竞争重心上移：从“谁能做出 demo”转向“谁能把 agent 接入真实业务流程”；\n",
+      "2) 生态趋于收拢：早期工具型产品将被平台内置能力替代，商业化路径更依赖生态绑定；\n",
+      "3) 质量与安全门槛上升：电脑操作 agent 涉及权限、审计、误操作风险，平台方将承担更高治理责任。",
+      "",
+      "四、需要继续验证的信号",
+      "— Anthropic 是否将 Vercept 的能力整合进 Claude 的 computer-use 体系并开放企业级接口；\n",
+      "— 对外部开发者是否提供更稳定的工具调用与审计机制；\n",
+      "— 关闭 Vy 后，用户迁移与产品体验是否出现明显升级。",
+      "",
+      "结语",
+      "这次收购的意义不在规模，而在方向：Agentic 电脑操作能力正在进入“平台整合期”，谁能把工具能力变成可治理、可审计、可规模化的生产力组件，谁就可能拿下下一阶段的 enterprise 市场。"
+    ],
+    "sourceDate": "2026-02-25"
+  },
+  {
     "slug": "deepseek-v4-withholds-us-chipmakers-20260226",
     "title": "DeepSeek 将V4模型优先交付国内芯片商：算力生态从“通用优化”转向“地缘绑定”",
     "date": "2026-02-26",
