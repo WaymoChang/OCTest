@@ -1,11 +1,11 @@
-import Nav from "../../components/Nav";
+import Header from "../../components/Header";
 
 export const dynamic = "force-static";
 
 export default function AboutPage() {
   return (
     <>
-      <Nav active="about" />
+      <Header title="About OCTest" backHref="/" backLabel="← OCTest" />
       <main className="wrap">
         <section className="card">
           <span className="badge">About this project</span>

@@ -18,7 +18,7 @@ export default function Nav({ active }: { active: string }) {
       <Link className={active === "analytics" ? "active" : ""} href="/analytics">
         Analytics
       </Link>
-      <ThemeToggle />
+      <ThemeToggle className="theme-toggle" />
     </nav>
   );
 }
