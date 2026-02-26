@@ -26,7 +26,7 @@ export default function HomePage() {
             Build fast, ship often, and make this space your playground.
           </p>
           <div className={styles.actions}>
-            <ThemeToggle />
+            <ThemeToggle className={`${styles.btn} ${styles.btnTheme}`} />
             <Link className={`${styles.btn} ${styles.btnSecondary}`} href="/about">
               About
             </Link>
@@ -36,9 +36,7 @@ export default function HomePage() {
             <Link className={`${styles.btn} ${styles.btnSecondary}`} href="/contact">
               Contact
             </Link>
-            <Link className={`${styles.btn} ${styles.btnSecondary}`} href="/analytics">
-              Analytics
-            </Link>
+            {/* Analytics button removed to match GitHub Pages layout */}
             <Link className={`${styles.btn} ${styles.btnSecondary}`} href="/blog">
               Open Blog
             </Link>
